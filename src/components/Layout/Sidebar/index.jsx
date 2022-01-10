@@ -33,7 +33,7 @@ const useLocalStorage = (initialState, key) => {
   return [value, setValue]
 }
 const Sidebar = () => {
-  const [value, setValue] = useLocalStorage("Dashboard", "sidebar")
+  const [value, ] = useLocalStorage("Dashboard", "sidebar")
   const [toggle, setToggle] = useState(false)
 
   const handleToggle = navName => {
