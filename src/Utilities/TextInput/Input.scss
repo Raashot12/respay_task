@@ -1,0 +1,20 @@
+.input-wrapper {
+  display: block;
+  padding: 0.75rem;
+  width: 95%;
+  border: 2px solid #f0f0f0;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-family: inherit;
+}
+
+.input-wrapper:focus {
+  outline: none;
+  border-color: #44ce6f;
+  box-shadow: 0 0 10px #44ce6f;
+}
+
+.label-wrapper {
+  font-size: 1.15rem;
+  color: #a5a5a5;
+}
