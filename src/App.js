@@ -13,6 +13,7 @@ import ReduxThunk from "redux-thunk"
 import auth from "./store/reducers/Auth/auth"
 import pageList from "./views/pages/Pages"
 import PrivateRoute from "./views/pages/PrivateRoute/PrivateRoute"
+import {  AppProvider } from "./store/Context"
 const persistenceConfigs = {
   key: "persist-key",
   storage,
@@ -32,7 +33,8 @@ const persistedStore = persistStore(store)
 function App() {
   return (
     <>
-      <Provider store={store}>
+      <Provider store={ store }>
+        <AppProvider >
         <PersistGate persistor={persistedStore}>
           <BrowserRouter>
             <Switch>
@@ -43,7 +45,8 @@ function App() {
 
             </Switch>
           </BrowserRouter>
-        </PersistGate>
+          </PersistGate>
+        </AppProvider>
       </Provider>
     </>
   )

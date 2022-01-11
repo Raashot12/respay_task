@@ -1,5 +1,3 @@
-.sidebarItemContainer {
-}
 .sidebar-item-container {
   display: flex !important;
   align-items: center !important;
@@ -96,9 +94,15 @@ a.active {
   color: #767272;
   margin-left: 14px;
 }
+// Fontawesome Icons
 .fa-chevron-down {
   margin-left: 20px;
   cursor: pointer;
+}
+.fa-bars {
+  padding-left: 2rem;
+  font-size: 32px;
+  color: #038618;
 }
 .search-container {
   position: relative;
@@ -155,15 +159,16 @@ a.active {
   }
 }
 .grid-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  --auto-grid-min-size: 341px;
+  display: grid;
   margin-top: 2rem;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--auto-grid-min-size), 1fr)
+  );
+  box-sizing: border-box;
   .grid-card {
-    width: 32.3%;
-    margin-right: 0.8rem;
-    margin-bottom: 2rem;
-    border-radius: 0px 0px 8px 8px;
     img {
       width: 100%;
     }
@@ -171,15 +176,86 @@ a.active {
   .card-text {
     padding-top: 10px;
     background-color: #fefefe;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    cursor: pointer;
+    padding-left: 17px;
+    padding-right: 17px;
   }
 }
-@media (max-width: 1200px) {
+.card-text-first-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  h4 {
+    font-family: "MetaPro-Normal";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    color: #767272;
+  }
+  p {
+    font-family: "MetaPro-Normal";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+    color: #038618;
+  }
+}
+.residential-container {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  h4 {
+    font-family: "MetaPro-Normal";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+    color: #a5a4a4;
+  }
+  .fa-chevron-up {
+    color: #3c3c3c;
+    width: 14.42px;
+    height: 8.05px;
+  }
+}
+.location-container {
+  padding-bottom: 20px;
+  transition: all 0.5s ease-in-out;
+  h4 {
+    font-family: "MetaPro-Normal";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+    color: #767272;
+  }
+}
+.location-non {
+  height: 0;
+  transition: all 0.5s ease-in-out;
+}
+@media (max-width: 1999px) {
   .search-container {
-    width: 200px;
+    width: 280px;
+  }
+  .nav-items-container {
+    padding-right: 2rem;
   }
 }
 @media (max-width: 768px) {
   .search-container {
     display: none;
+  }
+}
+@media (max-width: 567px) {
+  .nav-items-container {
+    padding-right: 1rem;
+  }
+  .fa-bars {
+    padding-left: 1rem;
   }
 }

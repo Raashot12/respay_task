@@ -1,10 +1,14 @@
 import React from "react"
 import Nofitication from "../../../assets/Icon/Nofitication"
 import SearchIcon from "../../../assets/Icon/SearchIcon"
+import { useGlobalContext } from "../../../store/Context"
 
 const Navbar = () => {
+  const { openSidebar } = useGlobalContext()
+  console.log( openSidebar)
   return (
-    <div className="navbar">
+    <div className="navbar" >
+      <i class="fas fa-bars" onClick={ openSidebar }></i>
       <div className="nav-items-container">
         <div className="search-container">
          

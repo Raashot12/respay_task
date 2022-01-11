@@ -25,16 +25,16 @@ body {
 p {
   margin: 0;
 }
-h3{
-    margin: 0;
-}
-h4{
+h3 {
   margin: 0;
 }
-h1{
+h4 {
   margin: 0;
 }
-h2{
+h1 {
+  margin: 0;
+}
+h2 {
   margin: 0;
 }
 .navbar {
@@ -42,25 +42,14 @@ h2{
   top: 0;
   left: 0;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding-top: 19px;
   padding-bottom: 19px;
   align-items: center;
   background-color: var(--white-color);
-  padding-right: 4rem;
   width: 100%;
 }
-.sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 278px;
-  box-sizing: border-box;
-  z-index: 1;
-  background-color: var(--optional-color);
-  padding-top: 35px;
-}
+
 .company-logo {
   margin-bottom: 38px;
   cursor: pointer;
@@ -71,9 +60,11 @@ h2{
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  position: relative;
   padding-left: 295px;
   min-height: 100vh;
   padding-right: 4rem;
+  margin-bottom: 4rem;
   padding-top: 90px;
 }
 ::-webkit-scrollbar {
@@ -101,4 +92,54 @@ h2{
 }
 a {
   text-decoration: none;
+}
+@media (max-width: 1199px) {
+  .sidebar-false {
+    position: fixed;
+    left: -100%;
+    transition: all 0.5s ease-in-out;
+    height: 100%;
+    width: 278px;
+    box-sizing: border-box;
+    z-index: 1;
+    background-color: var(--optional-color);
+    padding-top: 35px;
+  }
+  .sidebar-true {
+    position: fixed;
+    left: 0;
+    transition: all 0.5s ease-in-out;
+    height: 100%;
+    width: 278px;
+    z-index: 200 !important;
+    box-sizing: border-box;
+    background-color: var(--optional-color);
+    padding-top: 35px;
+  }
+  .backdrop-overlay-false {
+    width: 0;
+  }
+  .main-content-wrapper {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+   .backdrop-overlay-true{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease-in-out;
+   }
+}
+@media (min-width: 1200px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 278px;
+    box-sizing: border-box;
+    background-color: var(--optional-color);
+    padding-top: 35px;
+  }
 }
