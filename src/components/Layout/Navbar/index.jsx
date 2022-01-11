@@ -5,7 +5,6 @@ import { useGlobalContext } from "../../../store/Context"
 
 const Navbar = () => {
   const { openSidebar } = useGlobalContext()
-  console.log( openSidebar)
   return (
     <div className="navbar" >
       <i class="fas fa-bars" onClick={ openSidebar }></i>

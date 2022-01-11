@@ -31,75 +31,86 @@ const useLocalStorage = (initialState, key) => {
   return [value, setValue]
 }
 const Sidebar = () => {
-  const [toggle, setToggle] = useLocalStorage( false, "sidebar")
-  const { isSidebarOpen, openSidebar, setIsSidebarOpen } = useGlobalContext()
+  const [toggle, setToggle] = useLocalStorage(false, "sidebar")
+  const {isSidebarOpen, openSidebar, setIsSidebarOpen} = useGlobalContext()
   const handleToggle = () => {
-      setToggle(!toggle)
+    setToggle(!toggle)
   }
-
 
   return (
     <>
-      <div className={ `sidebar sidebar-${ isSidebarOpen }` } >
+      <div className={`sidebar sidebar-${isSidebarOpen}`}>
         <CompanyLogoIcon />
         <div className="sidebarItemContainer">
-          { sidebarNavItem( true ).map(
-            ( { navName, icon, path, dropDownItem }, index ) => {
-              if ( path === "" ) {
+          {sidebarNavItem(true).map(
+            ({navName, icon, path, dropDownItem}, index) => {
+              if (path === "") {
                 return (
                   <>
                     <div>
                       <a
                         exact
-                        to={ "properties" }
-                        key={ index }
-                        className={ `sidebar-item-container ${ toggle && "active" }` }
-                        onClick={ handleToggle }
+                        to={"properties"}
+                        key={index}
+                        className={`sidebar-item-container ${
+                          toggle && "active"
+                        }`}
+                        onClick={handleToggle}
                       >
-                        { icon }
-                        <p className="sidebar-text">{ navName }</p>
-                        { toggle ? (
-                          <ArrowDownIcon toggle={ toggle } className="arrow-svg" />
-                        ) : (
-                          <ArrowMidForward
-                            toggle={ toggle }
+                        {icon}
+                        <p className="sidebar-text">{navName}</p>
+                        {toggle ? (
+                          <ArrowDownIcon
+                            toggle={toggle}
                             className="arrow-svg"
                           />
-                        ) }
+                        ) : (
+                          <ArrowMidForward
+                            toggle={toggle}
+                            className="arrow-svg"
+                          />
+                        )}
                       </a>
                     </div>
-                    { toggle && (
+                    {toggle && (
                       <>
-                        { dropDownItem.map( data => {
+                        {dropDownItem.map(data => {
                           return (
-                            <Link to={ data.path } onClick={ () => setIsSidebarOpen(false)}>
-                              <div className="dropedNav"> { data.items }</div>
+                            <Link
+                              to={data.path}
+                              onClick={() => setIsSidebarOpen(false)}
+                            >
+                              <div className="dropedNav"> {data.items}</div>
                             </Link>
                           )
-                        } ) }
+                        })}
                       </>
-                    ) }
+                    )}
                   </>
                 )
               }
               return (
                 <NavLink
                   exact
-                  to={ path }
-                  key={ index }
+                  to={path}
+                  key={index}
                   className="sidebar-item-container"
-                  onClick={ () => setIsSidebarOpen( false ) }
+                  onClick={() => {
+                    setIsSidebarOpen(false)
+                  }}
                 >
-                  { icon }
-                  <p className="sidebar-text">{ navName }</p>
+                  {icon}
+                  <p className="sidebar-text">{navName}</p>
                 </NavLink>
               )
             }
-          ) }
+          )}
         </div>
       </div>
-      <div className={ `backdrop-overlay backdrop-overlay-${ isSidebarOpen }` } onClick={ openSidebar}>
-      </div>
+      <div
+        className={`backdrop-overlay backdrop-overlay-${isSidebarOpen}`}
+        onClick={openSidebar}
+      ></div>
     </>
   )
 }

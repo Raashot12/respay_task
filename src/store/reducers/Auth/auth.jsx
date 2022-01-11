@@ -1,23 +1,18 @@
 /* eslint-disable import/no-anonymous-default-export */
-import { GET_USERS, LOGOUT_USERS} from "../../actions/types/index"
+import { SET_CURRENT_USER} from "../../actions/types/index"
 
 const initialState = {
   isAuthenticated: false,
-  user: null
+  user: {}
 };
 
 export default function ( state = initialState, action ) {
   switch ( action.type ) {
-    case GET_USERS:
+    case SET_CURRENT_USER:
       return {
         ...state,
         isAuthenticated: action.payload.isAuthenticated,
         user: action.payload.user,
-      };
-    case LOGOUT_USERS:
-      return {
-        isAuthenticated: false,
-        user: null,
       };
     default:
       return state;

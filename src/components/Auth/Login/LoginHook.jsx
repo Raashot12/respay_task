@@ -32,13 +32,10 @@ function useForm( initialValues, validateLogin ) {
         history.push( "/home" );
         console.log(data)
       } catch ( err ) {
-        console.log( err.message );
         setLoading( false );
+        throw new Error( err.message );
       }
-    } else {
-      console.log( "errors try again", validationErrors );
     }
-    console.log(userData)
   };
 
   const handleChange = ( e ) => {
