@@ -247,6 +247,12 @@ a.active {
 
 
 // Media query
+@media (max-width: 650px){
+.btn-container-property {
+  margin-top: 28px;
+}
+}
+
 @media (min-width: 1199px) {
   .error-message {
     color: rgb(193, 11, 11);
