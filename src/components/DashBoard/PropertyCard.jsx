@@ -13,7 +13,7 @@ const PropertyComponentCard = ( { cardDetails } ) => {
   return (
     <div className="grid-card">
       <Link to={ "/property/" + cardDetails?.propertyId }>
-        <img src="https://res.cloudinary.com/rashot/image/upload/v1641836224/Rectangle_3_zzbenf.png" alt="" />
+        <img src="https://demo.respay.com/api//Images/Accommodation/Properties/637720395396183627.png" alt=""  className="card-img"/>
       </Link>
       <div className="card-text">
         <div className="card-text-first-section">
