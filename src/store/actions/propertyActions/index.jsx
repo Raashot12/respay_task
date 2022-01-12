@@ -1,7 +1,7 @@
-import axios from "axios";
 import { common_axios } from "../../../helper/AixosConfig/Api";
-import { PROPERTY_LIST_SUCCESS, PROPERTY_LIST_FAIL,PROPERTY_LIST_REQUEST, PROPERTY_DETAILS_FAIL, PROPERTY_DETAILS_REQUEST, PROPERTY_DETAILS_SUCCESS } from "../types";
-const endpoint = process.env.REACT_APP_BASE_URL;
+import { PROPERTY_LIST_SUCCESS, PROPERTY_LIST_FAIL, PROPERTY_LIST_REQUEST, PROPERTY_DETAILS_FAIL, PROPERTY_DETAILS_REQUEST, PROPERTY_DETAILS_SUCCESS } from "../types";
+
+
 const listProperty = () => async ( dispatch ) => {
 
   try {
