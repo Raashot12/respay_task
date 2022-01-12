@@ -5,9 +5,6 @@ import "./styles/global.scss"
 import Login from "./components/Auth/Login/Login"
 // Importing Redux tools....
 import { createStore, applyMiddleware, combineReducers, compose } from "redux"
-// import storage from "redux-persist/lib/storage"
-// import { persistReducer, persistStore } from "redux-persist"
-// import { PersistGate } from "redux-persist/integration/react"
 import { Provider } from "react-redux"
 import ReduxThunk from "redux-thunk"
 import auth from "./store/reducers/Auth/auth"
@@ -17,30 +14,26 @@ import { AppProvider } from "./store/Context"
 import RedirectRoute from "./views/pages/RedirectRoute/RedirectRoute"
 import { propertyListReducer, propertyDetailsReducer } from "./store/reducers/Property/PropertyReducers"
 import ScrollToTop from "./Utilities/ScrollToTop"
-// const persistenceConfigs = {
-//   key: "persist-key",
-//   storage,
-// }
+
 
 const rootReducer = combineReducers( {
   auth: auth,
   propertyList: propertyListReducer,
   propertyDetails: propertyDetailsReducer
 } )
-// const persistedReducer = persistReducer( persistenceConfigs, rootReducer )
+
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(
   rootReducer,
   composeEnhancer( applyMiddleware( ReduxThunk ) )
 )
-// const persistedStore = persistStore( store )
+
 
 function App() {
   return (
     <>
       <Provider store={ store }>
         <AppProvider >
-          {/* <PersistGate persistor={ persistedStore }> */ }
           <BrowserRouter>
             <Switch>
               <RedirectRoute path="/" exact component={ Login } />
@@ -51,7 +44,6 @@ function App() {
               </ScrollToTop>
             </Switch>
           </BrowserRouter>
-          {/* </PersistGate> */ }
         </AppProvider>
       </Provider>
     </>
