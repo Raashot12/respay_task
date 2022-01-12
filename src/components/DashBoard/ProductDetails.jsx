@@ -41,8 +41,6 @@ const ProductDetails = ( props ) => {
 export default ProductDetails
 
 const MainDetailSinglePage = ( { property } ) => {
-  // const { propertyName, address, propType, strPropType} = property && property?.data[0]
-
   return (
     <div className="container-maindetail-single-page">
       <div className="container-flex-details">
