@@ -1,16 +1,24 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React from "react"
+import React,{useEffect} from "react"
 import Spinner from "react-spinkit"
 import Input from "../../../Utilities/TextInput/Input"
 import Button from "../../../Utilities/Button/Button"
 import {validateLogin} from "./Validation"
 import useForm from "./LoginHook"
+import { useSelector } from "react-redux"
 
-const Login = () => {
+const Login = (props) => {
   const {handleSubmit, handleChange, userData, errors, loading} = useForm(
     {username: "", password: ""},
     validateLogin
   )
+  const isAuthenticated = useSelector( state => state.auth.isAuthenticated );
+  useEffect( () => {
+    if ( isAuthenticated ) {
+      props.history.push( '/home' );
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isAuthenticated] );
   return (
     <>
       <section className="login-container">

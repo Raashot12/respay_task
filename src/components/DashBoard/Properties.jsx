@@ -1,34 +1,43 @@
-import React, { useEffect } from "react"
-import { PropertyData } from "../../views/pages/Data/PropertyData"
+import React, { useState, useEffect, useMemo } from "react"
 import Layout from "../Layout/Layout"
 import PropertyComponentCard from "./PropertyCard"
 import { useDispatch, useSelector } from "react-redux"
 import { listProperty } from "../../store/actions/propertyActions"
 import Spinner from "react-spinkit"
-import Swal from "sweetalert2"
+import Pagination from "../../Utilities/Pagination/Pagination"
+
+let PageSize = 6
 const Properties = () => {
   const propertyList = useSelector( state => state.propertyList )
   const dispatch = useDispatch()
   console.log( propertyList )
-  const { property, loading, error } = propertyList || {}
-  console.log( loading )
-
+  const { products, loading, error } = propertyList || {}
+  const { data } =  products || []
+  
+  // Pagination
+  const [currentPage, setCurrentPage] = useState( 1 )
+  const currentTableData = useMemo( () => {
+    const firstPageIndex = ( currentPage - 1 ) * PageSize
+    const lastPageIndex = firstPageIndex + PageSize
+    return data?.slice( firstPageIndex, lastPageIndex )
+  }, [currentPage, data] )
+  console.log(currentTableData)
   useEffect( () => {
     dispatch( listProperty() )
   }, [dispatch] )
 
   const rendederedComponent = loading ? (
-    <>
-    <Spinner name="circle"  color="#038618" />
-    </>
+    <div style={{margin:"4rem auto", paddingLeft:"50%", paddingRight:"50%",}}>
+      <Spinner name="circle" style={ { height: 60, } } color="#038618" />
+    </div>
   ) : error ? (
     <>
      <h1 className="error-message">{error }! Please check your connection</h1>
       </>
   ) : (
     <div className="grid-wrapper">
-      { PropertyData.map( ( cardData, index ) => {
-        return <PropertyComponentCard { ...cardData } key={ index } />
+          { currentTableData?.map( ( cardData) => {
+        return <PropertyComponentCard  cardDetails={cardData}  key={ cardData.id } />
       } ) }
     </div>
   )
@@ -41,6 +50,17 @@ const Properties = () => {
         </div>
       </div>
       { rendederedComponent }
+      { !loading &&
+        <div className="pagination-grand-container">
+        <Pagination
+        className="pagination-bar"
+        currentPage={ currentPage }
+        totalCount={ data?.length }
+        pageSize={ PageSize }
+        onPageChange={ page => setCurrentPage( page ) }
+          />
+        </div>
+       }
     </Layout>
   )
 }

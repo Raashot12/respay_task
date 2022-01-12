@@ -14,6 +14,7 @@ function useForm(initialValues, validateLogin) {
   const dispatch = useDispatch()
 
   const handleSubmit = async event => {
+   
     event.preventDefault()
     const validationErrors = validateLogin(userData)
     const noErrors = Object.keys(validationErrors).length === 0
@@ -32,9 +33,10 @@ function useForm(initialValues, validateLogin) {
           showConfirmButton: false,
           timer: 1500,
         })
-        history.push( "/home" )
+       
         const token = response.data?.data?.token
-        localStorage.setItem("token", token)
+        localStorage.setItem( "token", token )
+        history.push( "/home" )
         dispatch({
           type: SET_CURRENT_USER,
           payload: {
@@ -48,6 +50,7 @@ function useForm(initialValues, validateLogin) {
       }
     }
   }
+
 
   const handleChange = e => {
     e.persist()

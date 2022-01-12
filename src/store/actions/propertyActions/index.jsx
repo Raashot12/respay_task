@@ -7,7 +7,7 @@ const listProperty = () => async ( dispatch ) => {
   try {
     dispatch( { type: PROPERTY_LIST_REQUEST, payload: [] } );
     const { data } = await common_axios.get("/api/properties" );
-
+    console.log(data)
     dispatch( { type: PROPERTY_LIST_SUCCESS, payload: data } );
   } catch ( error ) {
     dispatch( { type: PROPERTY_LIST_FAIL, payload: error?.message } );
