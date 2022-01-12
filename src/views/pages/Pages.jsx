@@ -3,6 +3,7 @@ import Facilities from "../../components/DashBoard/Facilities";
 import Home from "../../components/DashBoard/Home";
 import Invoice from "../../components/DashBoard/Invoice";
 import Maintenance from "../../components/DashBoard/Maintenance";
+import ProductDetails from "../../components/DashBoard/ProductDetails";
 import Properties from "../../components/DashBoard/Properties";
 import Rent from "../../components/DashBoard/Rent";
 import Units from "../../components/DashBoard/Units";
@@ -53,6 +54,11 @@ import Visitor from "../../components/DashBoard/Visitor";
     component: Visitor,
     path: "/visitors",
     name: "Visitors",
-  },
+   },
+   {
+     component: ProductDetails,
+     path: "/property/:propertyId",
+     name: "PropertyDetails",
+   },
 ]
 export default pageList

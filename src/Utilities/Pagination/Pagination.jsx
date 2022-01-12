@@ -45,6 +45,7 @@ console.log(currentPage)
           disabled: currentPage === 1
         } ) }
         onClick={ onPrevious }
+        style={{paddingLeft:"0"}}
       >
         <i className="fas fa-arrow-circle-left arrow left"></i>
       </li>

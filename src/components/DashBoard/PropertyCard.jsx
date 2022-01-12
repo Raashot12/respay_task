@@ -10,7 +10,6 @@ const PropertyComponentCard = ( { cardDetails } ) => {
   const handleToggle = () => {
     setToggle(!toggle)
   }
-  console.log( cardDetails)
   return (
     <div className="grid-card">
       <Link to={ "/property/" + cardDetails?.propertyId }>

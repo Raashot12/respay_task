@@ -1,10 +1,20 @@
-import React from 'react'
+import React from "react"
+import ArrowBackIcon from "../../assets/Icon/ArrowBackIcon"
+import Button from "../../Utilities/Button/Button"
+import Layout from "../Layout/Layout"
 
 const ProductDetails = () => {
   return (
-    <div>
-      <h1>Hello world</h1>
-    </div>
+    <Layout>
+      <div>
+        <ArrowBackIcon></ArrowBackIcon>
+        <p>Back</p>
+      </div>
+      <div>
+        <h3>Property Details</h3>
+        <Button buttonText="Action"></Button>
+      </div>
+    </Layout>
   )
 }
 

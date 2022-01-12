@@ -94,6 +94,12 @@ h2 {
 a {
   text-decoration: none;
 }
+.pagination-grand-container{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin-top: 3rem;
+}
 @media (max-width: 1199px) {
   .sidebar-false {
     position: fixed;
