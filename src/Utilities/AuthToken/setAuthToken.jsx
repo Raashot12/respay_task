@@ -1,13 +1,15 @@
-import axios from 'axios';
+import { common_axios } from '../../helper/AixosConfig/Api';
 
 const setAuthToken = async token => {
   if ( token ) {
-    //Apply to every request
-    axios.defaults.headers.common['Authorization'] = token;
+    //Apply to every request  
+    common_axios.defaults.headers.common['Authorization'] = token
   } else {
     //Delete the auth header
-    delete axios.defaults.headers.common['Authorization'];
+    delete common_axios.defaults.headers.common['Authorization'];
   }
 };
 
 export default setAuthToken;
+
+

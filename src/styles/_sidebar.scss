@@ -238,6 +238,22 @@ a.active {
   height: 0;
   transition: all 0.5s ease-in-out;
 }
+.error-message{
+  text-align: center !important;
+    font-size: 1.6rem;
+    margin-top: 3rem;
+}
+
+
+
+// Media query
+@media (min-width: 1999px) {
+  .error-message {
+    color: rgb(193, 11, 11);
+    font-size: 1.6rem;
+    font-family: "MetaPro-Normal";
+  }
+}
 @media (max-width: 1999px) {
   .search-container {
     width: 280px;

@@ -17,7 +17,7 @@ const PropertyComponentCard = ({title, unit, location, img}) => {
         <div className="residential-container">
           <h4>Residential</h4>
           <i
-            class={` ${toggle ? "fas fa-chevron-down" : "fas fa-chevron-up"}`}
+            className={` ${toggle ? "fas fa-chevron-down" : "fas fa-chevron-up"}`}
             onClick={handleToggle}
           ></i>
         </div>

@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
-// import sublinks from './data';
+
+
 const AppContext = React.createContext();
 
 const AppProvider = ( { children } ) => {
@@ -26,7 +27,6 @@ const AppProvider = ( { children } ) => {
     </AppContext.Provider>
   );
 };
-// make sure use
 export const useGlobalContext = () => {
   return useContext( AppContext );
 };

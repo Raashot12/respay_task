@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom"
+import { BrowserRouter, Switch } from "react-router-dom"
 import "./styles/global.scss"
 
 // Components
@@ -15,6 +15,7 @@ import pageList from "./views/pages/Pages"
 import PrivateRoute from "./views/pages/PrivateRoute/PrivateRoute"
 import { AppProvider } from "./store/Context"
 import RedirectRoute from "./views/pages/RedirectRoute/RedirectRoute"
+import { propertyListReducer, propertyDetailsReducer } from "./store/reducers/Property/PropertyReducers"
 const persistenceConfigs = {
   key: "persist-key",
   storage,
@@ -22,6 +23,8 @@ const persistenceConfigs = {
 
 const rootReducer = combineReducers( {
   auth: auth,
+  propertyList: propertyListReducer,
+  propertyDetails: propertyDetailsReducer
 } )
 const persistedReducer = persistReducer( persistenceConfigs, rootReducer )
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
@@ -36,17 +39,16 @@ function App() {
     <>
       <Provider store={ store }>
         <AppProvider >
-          <PersistGate persistor={ persistedStore }>
+          {/* <PersistGate persistor={ persistedStore }> */ }
             <BrowserRouter>
               <Switch>
                 <RedirectRoute path="/" exact component={ Login } />
                 { pageList.map( ( { name, path, component } ) => (
                   <PrivateRoute path={ path } key={ name } exact component={ component } />
                 ) ) }
-
               </Switch>
             </BrowserRouter>
-          </PersistGate>
+          {/* </PersistGate> */ }
         </AppProvider>
       </Provider>
     </>

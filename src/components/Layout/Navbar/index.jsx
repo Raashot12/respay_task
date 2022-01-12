@@ -7,7 +7,7 @@ const Navbar = () => {
   const { openSidebar } = useGlobalContext()
   return (
     <div className="navbar" >
-      <i class="fas fa-bars" onClick={ openSidebar }></i>
+      <i className="fas fa-bars" onClick={ openSidebar }></i>
       <div className="nav-items-container">
         <div className="search-container">
          
@@ -35,7 +35,7 @@ const Navbar = () => {
             <p className="description">Property Owner</p>
           </div>
         </div>
-        <i class="fas fa-chevron-down"></i>
+        <i className="fas fa-chevron-down"></i>
       </div>
     </div>
   )

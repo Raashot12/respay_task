@@ -19,7 +19,6 @@ const CompanyLogoIcon = () => {
 const useLocalStorage = (initialState, key) => {
   const get = () => {
     const storage = localStorage.getItem(key)
-    console.log(localStorage, storage)
     if (storage) return JSON.parse(storage).value
     return initialState
   }
@@ -74,15 +73,14 @@ const Sidebar = () => {
                     </div>
                     {toggle && (
                       <>
-                        {dropDownItem.map(data => {
-                          return (
-                            <Link
-                              to={data.path}
-                              onClick={() => setIsSidebarOpen(false)}
-                            >
-                              <div className="dropedNav"> {data.items}</div>
-                            </Link>
-                          )
+                        { dropDownItem.map( ( data, index ) => {
+                          return <Link
+                            to={ data.path }
+                            key={ index }
+                            onClick={ () => setIsSidebarOpen( false ) }
+                          >
+                            <div className="dropedNav"> { data.items }</div>
+                          </Link>
                         })}
                       </>
                     )}
