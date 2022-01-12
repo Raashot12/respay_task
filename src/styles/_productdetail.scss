@@ -1,0 +1,42 @@
+.property-back-page {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 35px;
+  p {
+    margin-left: 1rem;
+  }
+}
+
+.property-detail-row-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 17px;
+  h3 {
+    font-family: "MetaPro-Normal";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 22px;
+    letter-spacing: -0.408px;
+    color: #038618;
+  }
+  .btn-action {
+    padding: 19px 30px;
+    background-color: #038618;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-family: "MetaPro-Normal";
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    &:hover {
+      transition: all 0.5s ease-in-out;
+      background-color: transparent;
+      border: 1px solid red;
+      color: #038618;
+    }
+  }
+}

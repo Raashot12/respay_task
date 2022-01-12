@@ -247,14 +247,14 @@ a.active {
 
 
 // Media query
-@media (min-width: 1999px) {
+@media (min-width: 1199px) {
   .error-message {
     color: rgb(193, 11, 11);
     font-size: 1.6rem;
     font-family: "MetaPro-Normal";
   }
 }
-@media (max-width: 1999px) {
+@media (max-width: 1199px) {
   .search-container {
     width: 280px;
   }
