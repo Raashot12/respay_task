@@ -40,16 +40,33 @@
     }
   }
 }
-.container-maindetail-single-page{
+.container-maindetail-single-page {
   background-color: white;
-  width: 98%;
   margin-top: 32px;
   padding-left: 14px;
   padding-right: 14px;
   padding-top: 16px;
+  border-radius: 11px;
 }
-.container-flex-details{
+.container-flex-details {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+}
+.img-text-container {
+  .second-img {
+    margin-top: 15px;
+  }
+  p {
+    text-align: right;
+    margin-top: 25px;
+    text-decoration: underline;
+    font-family: "MetaPro-Normal";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+
+    letter-spacing: -0.408px;
+  }
 }
