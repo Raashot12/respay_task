@@ -57,7 +57,7 @@ import Visitor from "../../components/DashBoard/Visitor";
    },
    {
      component: ProductDetails,
-     path: "/property/:propertyId",
+     path: "/property/:slug",
      name: "PropertyDetails",
    },
 ]

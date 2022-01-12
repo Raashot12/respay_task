@@ -7,18 +7,17 @@ const listProperty = () => async ( dispatch ) => {
   try {
     dispatch( { type: PROPERTY_LIST_REQUEST, payload: [] } );
     const { data } = await common_axios.get("/api/properties" );
-    console.log(data)
     dispatch( { type: PROPERTY_LIST_SUCCESS, payload: data } );
   } catch ( error ) {
     dispatch( { type: PROPERTY_LIST_FAIL, payload: error?.message } );
   }
 };
 
-const detailsProperty = ( productId ) => async ( dispatch ) => {
+const detailsProperty = ( slug ) => async ( dispatch ) => {
   try {
-    dispatch( { type: PROPERTY_DETAILS_REQUEST, payload: productId } );
-    const { data } = await common_axios.get( "https://fakestoreapi.com/products/" + productId );
-    dispatch( { type: PROPERTY_DETAILS_SUCCESS, payload: data } );
+    dispatch( { type: PROPERTY_DETAILS_REQUEST, payload: slug } );
+    const { data } = await common_axios.get( `/api/propertybyid?Id=${ 3 }` );
+    dispatch( { type: PROPERTY_DETAILS_SUCCESS, payload: data.data[0] } );
   } catch ( error ) {
     dispatch( { type: PROPERTY_DETAILS_FAIL, payload: error.message } );
   }

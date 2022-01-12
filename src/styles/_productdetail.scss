@@ -115,30 +115,128 @@
     .amenities {
       margin-top: 25px;
     }
+    .view-all {
+      cursor: pointer;
+    }
   }
   .card-detail-one {
     width: 49%;
   }
 }
-
-//  MEDIA QUERY
-@media (max-width: 600px){
-.property-back-page{
-  margin-top: 28px;
+.page-data-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 1.4rem;
+  .transac-container {
+    width: 48%;
+    background-color: white;
+    padding-left: 28px;
+    padding-right: 28px;
+    box-sizing: border-box;
+    border-radius: 24px;
+  }
+  .circle-data-graph {
+    width: 48%;
+    background-color: white;
+    box-sizing: border-box;
+    padding-left: 28px;
+    height: 260px;
+    padding-right: 28px;
+    border-radius: 24px;
+  }
+  .see-more-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    color: #038618;
+    h3 {
+      color: #000 !important;
+    }
+    .fa-arrow-right {
+      margin-left: 0.6rem;
+      color: #038618;
+    }
+  }
+  .see-more-one {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .see-more-two {
+    margin-top: 30px;
+  }
 }
+.person-list-data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  .rent-total {
+    font-family: "MetaPro-Normal";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.408px;
+    color: #a6a6a6;
+  }
+
+  .price-amout {
+    font-family: "MetaPro-Normal";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: right;
+    padding-right: 1rem;
+    letter-spacing: -0.408px;
+  }
+}
+.last {
+  margin-bottom: 40px;
+}
+//  MEDIA QUERY
+@media (max-width: 600px) {
+  .property-back-page {
+    margin-top: 28px;
+  }
 }
 @media (max-width: 900px) {
   .container-flex-details {
     .card-detail-two {
       width: 100%;
       padding-bottom: 2rem;
-      .amenities{
+      .amenities {
         margin-top: 15px;
       }
     }
     .card-detail-one {
       width: 100%;
-      padding-bottom: 3rem;
+      padding-bottom: 2rem;
+    }
+  }
+  .person-list-data {
+    .price-amout {
+      padding-right: 0;
+    }
+  }
+  .page-data-container {
+    .transac-container {
+      width: 100%;
+      padding-left: 15px;
+      padding-right: 15px;
+      box-sizing: border-box;
+      border-radius: 24px;
+    }
+    .circle-data-graph {
+      width: 100%;
+      height: 260px;
+      padding-left: 15px;
+      padding-right: 15px;
+      border-radius: 24px;
+      margin-top: 2rem;
     }
   }
 }

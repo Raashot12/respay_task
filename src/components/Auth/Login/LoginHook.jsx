@@ -1,18 +1,19 @@
-import {useState} from "react"
+import {useState, useEffect} from "react"
 import Swal from "sweetalert2"
-import {useHistory} from "react-router-dom"
+import { useHistory} from "react-router-dom"
 import {common_axios} from "../../../helper/AixosConfig/Api"
-import { useDispatch} from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import {SET_CURRENT_USER} from "../../../store/actions/types"
+
 
 
 function useForm(initialValues, validateLogin) {
   const [userData, setUserData] = useState(initialValues)
   const [errors, setErrors] = useState({})
-  const [loading, setLoading] = useState(false)
-  const history = useHistory()
+  const [loading, setLoading] = useState( false )
+  const currentUser = useSelector( state => state.auth.isAuthenticated )
   const dispatch = useDispatch()
-
+  const history = useHistory()
   const handleSubmit = async event => {
    
     event.preventDefault()
@@ -36,7 +37,7 @@ function useForm(initialValues, validateLogin) {
        
         const token = response.data?.data?.token
         localStorage.setItem( "token", token )
-        history.push( "/home" )
+        
         dispatch({
           type: SET_CURRENT_USER,
           payload: {
@@ -50,7 +51,12 @@ function useForm(initialValues, validateLogin) {
       }
     }
   }
-
+  useEffect( () => {
+    if ( currentUser ) {
+      history.push( "/home" )
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentUser])
 
   const handleChange = e => {
     e.persist()

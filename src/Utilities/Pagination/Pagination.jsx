@@ -34,7 +34,7 @@ const Pagination = props => {
   const onPrevious = () => {
     onPageChange( currentPage - 1 );
   };
-console.log(currentPage)
+
   let lastPage = paginationRange && paginationRange[paginationRange.length - 1];
   return (
     <ul

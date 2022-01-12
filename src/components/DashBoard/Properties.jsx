@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useState, useEffect, useMemo} from "react"
 import Layout from "../Layout/Layout"
 import PropertyComponentCard from "./PropertyCard"
