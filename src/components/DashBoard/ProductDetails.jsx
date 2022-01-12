@@ -27,16 +27,16 @@ const MainDetailSinglePage = () => {
   return (
     <div className="container-maindetail-single-page">
       <div className="container-flex-details">
-        <section>
+        <section className="card-detail-one">
           <img src="https://res.cloudinary.com/rashot/image/upload/v1642007572/unsplash_2d4lAQAlbDA_usqkpc.png" alt="" width="100%" height="auto" />
           <div>
-            <h3>Top Court Garden</h3>
-            <p>24, Roland Road, Challenge, Ibadan, Oyo, NG</p>
-            <p>Property Type : Residential</p>
-            <p>Property Sub-Type : Semi- Detached</p>
+            <h3 className="top-court">Top Court Garden</h3>
+            <p className="paragraph-one">24, Roland Road, Challenge, Ibadan, Oyo, NG</p>
+            <p className="paragraph-two">Property Type : Residential</p>
+            <p className="paragraph-three">Property Sub-Type : Semi- Detached</p>
           </div>
         </section>
-        <section>
+        <section className="card-detail-two">
           <div className="img-text-container">
           <div>
             <img src="https://res.cloudinary.com/rashot/image/upload/v1642007563/unsplash_MP0bgaS_d1c_bfy5ak.png" alt="" width="100%" height="auto"/>
@@ -46,7 +46,7 @@ const MainDetailSinglePage = () => {
             </div>
             <p>View all images</p>
           </div>
-          <h3>Amenities</h3>
+          <h3 className="amenities">Amenities</h3>
         </section>
       </div>
     </div>
