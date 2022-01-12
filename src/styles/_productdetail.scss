@@ -111,8 +111,30 @@
     color: #767272;
   }
   .card-detail-two {
+    width: 49%;
     .amenities {
-      margin-top: 12px;
+      margin-top: 25px;
+    }
+  }
+  .card-detail-one {
+    width: 49%;
+  }
+}
+
+//  MEDIA QUERY
+
+@media (max-width: 900px) {
+  .container-flex-details {
+    .card-detail-two {
+      width: 100%;
+      padding-bottom: 2rem;
+      .amenities{
+        margin-top: 15px;
+      }
+    }
+    .card-detail-one {
+      width: 100%;
+      padding-bottom: 3rem;
     }
   }
 }
