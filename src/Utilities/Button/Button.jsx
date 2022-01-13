@@ -10,7 +10,7 @@ const Button = ( { type, buttonText, ...props } ) => {
 
 // eslint-disable-next-line react/no-typos
 Button.propTypes = {
-  type: propTypes.string.isRequired,
+  type: propTypes.string,
   buttonText: propTypes.string.isRequired
 }
 

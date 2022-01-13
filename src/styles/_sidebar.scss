@@ -238,22 +238,23 @@ a.active {
   height: 0;
   transition: all 0.5s ease-in-out;
 }
-.error-message{
+.error-message {
   text-align: center !important;
-    font-size: 1.6rem;
-    margin-top: 3rem;
+  font-size: 1.6rem;
+  margin-top: 3rem;
+  color: rgb(193, 11, 11);
 }
 
-.card-img{
+.card-img {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
 
 // Media query
-@media (max-width: 650px){
-.btn-container-property {
-  margin-top: 28px;
-}
+@media (max-width: 650px) {
+  .btn-container-property {
+    margin-top: 28px;
+  }
 }
 
 @media (min-width: 1199px) {

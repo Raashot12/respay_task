@@ -14,8 +14,7 @@ function useForm(initialValues, validateLogin) {
   const currentUser = useSelector( state => state.auth.isAuthenticated )
   const dispatch = useDispatch()
   const history = useHistory()
-  const handleSubmit = async event => {
-   
+  const handleSubmit = async event => {  
     event.preventDefault()
     const validationErrors = validateLogin(userData)
     const noErrors = Object.keys(validationErrors).length === 0
@@ -37,7 +36,6 @@ function useForm(initialValues, validateLogin) {
        
         const token = response.data?.data?.token
         localStorage.setItem( "token", token )
-        
         dispatch({
           type: SET_CURRENT_USER,
           payload: {
