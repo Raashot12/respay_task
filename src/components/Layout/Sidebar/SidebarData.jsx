@@ -1,7 +1,6 @@
 import ApplicationIcon from "../../../assets/Icon/ApplicationIcon"
 import InvoiceIcon from "../../../assets/Icon/InvoiceIcon"
 import MaintenanceIcon from "../../../assets/Icon/MaintenanceIcon"
-// import PropertiesIcon from "../../../assets/Icon/PropertiesIcon"
 import RentIcon from "../../../assets/Icon/RentIcon"
 import SquareBox from "../../../assets/Icon/SquareBox"
 import Facilitycon from "../../../assets/Icon/Facilitycon"
@@ -55,22 +54,6 @@ export const sidebarNavItem = () =>  [
     path: "/visitors",
     navName: "Visitors",
   },
-  {
-    icon: <MaintenanceIcon />,
-    path: "/maintenance",
-    navName: "Maintenance",
-  },
-  {
-    icon: <Facilitycon />,
-    path: "/facility",
-    navName: "Facility Management",
-  },
-  {
-    icon: <VisitorsIcon />,
-    path: "/visitors",
-    navName: "Visitors",
-  }
-
 ]
 
 export const sideBarBottomItems = [

@@ -2,7 +2,7 @@
 import React, {useState, useEffect} from "react"
 import Logo from "../../../assets/Images/logo.svg"
 import {sidebarNavItem, sideBarBottomItems} from "./SidebarData"
-import {Link} from "react-router-dom"
+import {Link, useHistory} from "react-router-dom"
 import {NavLink} from "react-router-dom/cjs/react-router-dom.min"
 import ArrowMidForward from "../../../assets/Icon/ArrowMidForward"
 import ArrowDownIcon from "../../../assets/Icon/ArrowDownIcon"
@@ -31,11 +31,16 @@ const useLocalStorage = (initialState, key) => {
 }
 const Sidebar = () => {
   const [toggle, setToggle] = useLocalStorage(false, "sidebar")
-  const {isSidebarOpen, openSidebar, setIsSidebarOpen} = useGlobalContext()
+  const { isSidebarOpen, openSidebar, setIsSidebarOpen } = useGlobalContext()
+  const history = useHistory()
   const handleToggle = () => {
     setToggle(!toggle)
   }
-
+  const handleLogout = () => {
+    localStorage.clear()
+    history.push( "/" )
+    console.clear()
+ }
   return (
     <>
       <div className={`sidebar sidebar-${isSidebarOpen}`}>
@@ -113,6 +118,7 @@ const Sidebar = () => {
                   key={ index }
                   className="sidebar-item-container"
                   id="bottom-sidebar-items"
+                  onClick={handleLogout}
                 >
                   { icon }
                   <p className="sidebar-text">{ navName }</p>

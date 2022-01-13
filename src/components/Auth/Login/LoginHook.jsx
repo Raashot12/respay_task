@@ -3,6 +3,7 @@ import Swal from "sweetalert2"
 import { useHistory} from "react-router-dom"
 import {common_axios} from "../../../helper/AixosConfig/Api"
 import { useDispatch, useSelector } from "react-redux"
+import jwt_decode from 'jwt-decode';
 import {SET_CURRENT_USER} from "../../../store/actions/types"
 
 
@@ -11,7 +12,7 @@ function useForm(initialValues, validateLogin) {
   const [userData, setUserData] = useState(initialValues)
   const [errors, setErrors] = useState({})
   const [loading, setLoading] = useState( false )
-  const currentUser = useSelector( state => state.auth.isAuthenticated )
+  const currentUser = useSelector( state => state.auth.user )
   const dispatch = useDispatch()
   const history = useHistory()
   const handleSubmit = async event => {  
@@ -36,11 +37,12 @@ function useForm(initialValues, validateLogin) {
        
         const token = response.data?.data?.token
         localStorage.setItem( "token", token )
+        //decode token to get user data
+        const decoded = jwt_decode( token );
         dispatch({
           type: SET_CURRENT_USER,
           payload: {
-            isAuthenticated: true,
-            user: response.data?.data?.user,
+            user: decoded,
           },
         })
       } catch (err) {
@@ -54,7 +56,7 @@ function useForm(initialValues, validateLogin) {
       history.push( "/home" )
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentUser])
+  }, [currentUser, history])
 
   const handleChange = e => {
     e.persist()

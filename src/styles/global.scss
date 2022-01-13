@@ -70,7 +70,7 @@ h2 {
   padding-top: 90px;
 }
 ::-webkit-scrollbar {
-  width: 1px;
+  width: 3px;
   height: 6px;
 }
 .errors {
@@ -85,12 +85,12 @@ h2 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #334f7d;
+  background: #ffffff;
   border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: red;
+  background: #a5aaad;
 }
 a {
   text-decoration: none;
