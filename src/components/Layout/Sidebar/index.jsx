@@ -44,7 +44,7 @@ const Sidebar = () => {
   return (
     <>
       <div className={`sidebar sidebar-${isSidebarOpen}`}>
-        <CompanyLogoIcon />
+        <CompanyLogoIcon/>
         <div className="sidebar-items-general-container">
         <div className="sidebarItemContainer">
           {sidebarNavItem(true).map(
