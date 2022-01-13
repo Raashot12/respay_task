@@ -6,9 +6,9 @@ import RentIcon from "../../../assets/Icon/RentIcon"
 import SquareBox from "../../../assets/Icon/SquareBox"
 import Facilitycon from "../../../assets/Icon/Facilitycon"
 import VisitorsIcon from "../../../assets/Icon/VisitorsIcon"
-// import RolesIcon from "../../../assets/Icon/RolesIcon"
-// import SettingIcon from "../../../assets/Icon/SettingIcon"
-// import LogoutIcon from "../../../assets/Icon/LogoutIcon"
+import RolesIcon from "../../../assets/Icon/RolesIcon"
+import SettingIcon from "../../../assets/Icon/SettingIcon"
+import LogoutIcon from "../../../assets/Icon/LogoutIcon"
 
 export const sidebarNavItem = () =>  [
   {
@@ -57,20 +57,20 @@ export const sidebarNavItem = () =>  [
   }
 ]
 
-// const sideBarBottomItems = [
-//   {
-//     icon: <RolesIcon/>,
-//     path: "dashboard/roles",
-//     navName: "Roles",
-//   },
-//   {
-//     icon: <SettingIcon/>,
-//     path: "dashboard/settings",
-//     navName: "Settings"
-//   },
-//   // {
-//   //   icon: LogoutIcon,
-//   //   path: "/",
-//   //   navName: "Log out" 
-//   // }
-// ]
+export const sideBarBottomItems = [
+  {
+    icon: <RolesIcon/>,
+    path: "dashboard/roles",
+    navName: "Roles",
+  },
+  {
+    icon: <SettingIcon/>,
+    path: "dashboard/settings",
+    navName: "Settings"
+  },
+  {
+    icon: <LogoutIcon />,
+    path: "/",
+    navName: "Log out" 
+  }
+]

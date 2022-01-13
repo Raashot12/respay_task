@@ -255,6 +255,12 @@ a.active {
   .btn-container-property {
     margin-top: 28px;
   }
+  .btn-container-property {
+    .btn {
+      padding-right: 12px;
+      padding-left: 12px;
+    }
+  }
 }
 
 @media (min-width: 1199px) {
