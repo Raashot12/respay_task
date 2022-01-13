@@ -272,6 +272,9 @@ a.active {
       padding-left: 12px;
     }
   }
+  .sidebar-items-general-container{
+    max-height: 70vh;
+  }
 }
 
 @media (min-width: 1199px) {
