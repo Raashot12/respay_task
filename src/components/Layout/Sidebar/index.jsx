@@ -40,6 +40,7 @@ const Sidebar = () => {
     <>
       <div className={`sidebar sidebar-${isSidebarOpen}`}>
         <CompanyLogoIcon />
+        <div className="sidebar-items-general-container">
         <div className="sidebarItemContainer">
           {sidebarNavItem(true).map(
             ({navName, icon, path, dropDownItem}, index) => {
@@ -112,9 +113,6 @@ const Sidebar = () => {
                   key={ index }
                   className="sidebar-item-container"
                   id="bottom-sidebar-items"
-                  onClick={ () => {
-                    setIsSidebarOpen( false )
-                  } }
                 >
                   { icon }
                   <p className="sidebar-text">{ navName }</p>
@@ -137,6 +135,7 @@ const Sidebar = () => {
               </NavLink>
             )
           })} 
+        </div>
         </div>
       </div>
       <div

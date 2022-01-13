@@ -12,6 +12,11 @@
     margin-bottom: 0;
   }
 }
+.sidebar-items-general-container{
+  max-height: 80vh;
+  width: 100%;
+  overflow-y: scroll;
+}
 .sidebar-item-container:nth-child(2) {
   margin-bottom: 12px;
 }
@@ -255,6 +260,7 @@ a.active {
 #bottom-sidebar-items:nth-child(2){
   margin-bottom: 1.8rem !important;
 }
+
 // Media query
 @media (max-width: 650px) {
   .btn-container-property {

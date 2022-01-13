@@ -54,7 +54,23 @@ export const sidebarNavItem = () =>  [
     icon: <VisitorsIcon />,
     path: "/visitors",
     navName: "Visitors",
+  },
+  {
+    icon: <MaintenanceIcon />,
+    path: "/maintenance",
+    navName: "Maintenance",
+  },
+  {
+    icon: <Facilitycon />,
+    path: "/facility",
+    navName: "Facility Management",
+  },
+  {
+    icon: <VisitorsIcon />,
+    path: "/visitors",
+    navName: "Visitors",
   }
+
 ]
 
 export const sideBarBottomItems = [
