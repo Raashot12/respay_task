@@ -60,17 +60,17 @@ export const sidebarNavItem = () =>  [
 export const sideBarBottomItems = [
   {
     icon: <RolesIcon/>,
-    path: "dashboard/roles",
+    path: "/roles",
     navName: "Roles",
   },
   {
     icon: <SettingIcon/>,
-    path: "dashboard/settings",
+    path: "/settings",
     navName: "Settings"
   },
   {
     icon: <LogoutIcon />,
-    path: "/",
+    path: "",
     navName: "Log out" 
   }
 ]

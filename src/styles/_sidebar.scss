@@ -249,7 +249,12 @@ a.active {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
-
+.bottom-sidebar{
+  margin-top:4rem;
+}
+#bottom-sidebar-items:nth-child(2){
+  margin-bottom: 1.8rem !important;
+}
 // Media query
 @media (max-width: 650px) {
   .btn-container-property {

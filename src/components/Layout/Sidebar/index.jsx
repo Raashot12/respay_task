@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {useState, useEffect, useRef} from "react"
+import React, {useState, useEffect} from "react"
 import Logo from "../../../assets/Images/logo.svg"
-import {sidebarNavItem} from "./SidebarData"
+import {sidebarNavItem, sideBarBottomItems} from "./SidebarData"
 import {Link} from "react-router-dom"
 import {NavLink} from "react-router-dom/cjs/react-router-dom.min"
 import ArrowMidForward from "../../../assets/Icon/ArrowMidForward"
@@ -48,8 +48,6 @@ const Sidebar = () => {
                   <>
                     <div>
                       <a
-                        exact
-                        to={"properties"}
                         key={index}
                         className={`sidebar-item-container ${
                           toggle && "active"
@@ -73,14 +71,16 @@ const Sidebar = () => {
                     </div>
                     {toggle && (
                       <>
-                        { dropDownItem.map( ( data, index ) => {
-                          return <Link
-                            to={ data.path }
-                            key={ index }
-                            onClick={ () => setIsSidebarOpen( false ) }
-                          >
-                            <div className="dropedNav"> { data.items }</div>
-                          </Link>
+                        {dropDownItem.map((data, index) => {
+                          return (
+                            <Link
+                              to={data.path}
+                              key={index}
+                              onClick={() => setIsSidebarOpen(false)}
+                            >
+                              <div className="dropedNav"> {data.items}</div>
+                            </Link>
+                          )
                         })}
                       </>
                     )}
@@ -103,6 +103,40 @@ const Sidebar = () => {
               )
             }
           )}
+        </div>
+        <div className="bottom-sidebar">
+          { sideBarBottomItems.map( ( { path, icon, navName }, index ) => {
+            if ( path === "" ) {
+              return (
+                <a
+                  key={ index }
+                  className="sidebar-item-container"
+                  id="bottom-sidebar-items"
+                  onClick={ () => {
+                    setIsSidebarOpen( false )
+                  } }
+                >
+                  { icon }
+                  <p className="sidebar-text">{ navName }</p>
+                </a>
+              )
+            } 
+            return (
+              <NavLink
+                exact
+                to={ path }
+                key={ index }
+                className="sidebar-item-container"
+                id="bottom-sidebar-items"
+                onClick={ () => {
+                  setIsSidebarOpen( false )
+                } }
+              >
+                { icon }
+                <p className="sidebar-text">{ navName }</p>
+              </NavLink>
+            )
+          })} 
         </div>
       </div>
       <div

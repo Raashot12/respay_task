@@ -6,6 +6,8 @@ import Maintenance from "../../components/DashBoard/Maintenance";
 import ProductDetails from "../../components/DashBoard/ProductDetails";
 import Properties from "../../components/DashBoard/Properties";
 import Rent from "../../components/DashBoard/Rent";
+import Role from "../../components/DashBoard/Role";
+import Setting from "../../components/DashBoard/Setting";
 import Units from "../../components/DashBoard/Units";
 import Visitor from "../../components/DashBoard/Visitor";
 
@@ -60,5 +62,15 @@ import Visitor from "../../components/DashBoard/Visitor";
      path: "/property/:slug",
      name: "PropertyDetails",
    },
+   {
+     component: Role,
+     path: "/roles",
+     name: "Roles",
+   },
+   {
+     component: Setting,
+     path: '/settings',
+     name: "Settings"
+   }
 ]
 export default pageList
